@@ -119,6 +119,9 @@
                                                 <constraint firstAttribute="width" constant="85" id="fKb-x1-HPq"/>
                                             </constraints>
                                             <state key="normal" image="Buy"/>
+                                            <connections>
+                                                <action selector="orderButtonHit:" destination="0hB-Ti-JQe" eventType="touchUpInside" id="fZF-X9-Fs7"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <animations/>

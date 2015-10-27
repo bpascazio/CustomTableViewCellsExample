@@ -8,13 +8,21 @@
 
 import UIKit
 
+///
+@objc protocol CustomTableViewCellDelegate : NSObjectProtocol {
+    func buyButtonHit()
+}
+///
+
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
-    
+    var delegate:CustomTableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -24,4 +32,10 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func orderButtonHit(sender: AnyObject) {
+        
+        if let delegate_ = self.delegate {
+            delegate_.buyButtonHit()
+        }
+    }
 }
